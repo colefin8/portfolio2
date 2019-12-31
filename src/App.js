@@ -29,6 +29,23 @@ const theme = createMuiTheme({
   }
 });
 
+const toggleZoom = pictureId => {
+  const element = document.getElementById(pictureId);
+  if (element.classList.contains("hidden-initial")) {
+    element.classList.remove("hidden-initial");
+  }
+  console.log(element);
+  if (element.classList.contains("visible")) {
+    element.classList.remove("visible");
+    element.classList.add("hidden");
+  } else {
+    if (element.classList.contains("hidden")) {
+      element.classList.remove("hidden");
+    }
+    element.classList.add("visible");
+  }
+};
+
 const useStyles = makeStyles(() => {
   console.log(theme);
   return {
@@ -72,7 +89,8 @@ const useStyles = makeStyles(() => {
     },
     carouselPaper: {
       backgroundColor: "#f5f5f566",
-      height: "60vh"
+      height: "60vh",
+      padding: "7px"
     }
   };
 });
@@ -117,6 +135,51 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <img
+        onClick={() => toggleZoom("picture1")}
+        id="picture1"
+        alt="listo 1 zoom"
+        src="/assets/Listo1.png"
+        class="zoom-picture hidden-initial"
+      />
+      <img
+        onClick={() => toggleZoom("picture2")}
+        id="picture2"
+        alt="listo 2 zoom"
+        src="/assets/Listo2.png"
+        class="zoom-picture hidden-initial"
+      />
+      <img
+        onClick={() => toggleZoom("picture3")}
+        id="picture3"
+        alt="listo 3 zoom"
+        src="/assets/Listo3.png"
+        class="zoom-picture hidden-initial"
+      />
+      <img
+        onClick={() => toggleZoom("picture4")}
+        id="picture4"
+        alt="love to know 1 zoom"
+        src="/assets/Lovetoknow1.png"
+        class="zoom-picture hidden-initial"
+      />
+      <img
+        onClick={() => toggleZoom("picture5")}
+        id="picture5"
+        alt="love to know 2 zoom"
+        src="/assets/Lovetoknow2.png"
+        class="zoom-picture hidden-initial"
+      />
+      <img
+        onClick={() => toggleZoom("picture6")}
+        id="picture6"
+        alt="love to know 3 zoom"
+        src="/assets/Lovetoknow3.png"
+        class="zoom-picture hidden-initial"
+      />
+      <img id="picture7" class="zoom-picture hidden-initial" />
+      <img id="picture8" class="zoom-picture hidden-initial" />
+      <img id="picture9" class="zoom-picture hidden-initial" />
       <div
         style={{
           overflow: "hidden",
@@ -316,19 +379,115 @@ function App() {
                 elevation3: classes.paper3
               }}
             >
-              <Typography variant="h4" classes={{ root: classes.cardHeader }}>
-                PROJECTS
-              </Typography>
-              <Carousel autoPlay={false} indicators={true} animation="slide">
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Typography variant="h4" classes={{ root: classes.cardHeader }}>
+                  PROJECTS
+                </Typography>
+                <Typography
+                  variant="body1"
+                  classes={{ root: classes.cardHeader }}
+                >
+                  Click pictures to zoom
+                </Typography>
+              </div>
+              <Carousel
+                autoPlay={false}
+                indicators={true}
+                animation="slide"
+                className="carousel"
+              >
                 <Paper classes={{ root: classes.carouselPaper }}>
-                  <Typography color="inherit">Listo</Typography>
-                  <CardMedia image="" />
+                  <Typography color="inherit" variant="h6">
+                    Listo
+                  </Typography>
+                  <Typography color="inherit" style={{ marginTop: "1vh" }}>
+                    Simple budgeting and list app designed to be user-friendly
+                    and user-proof, designed for mobile and uses Amazon S3 for
+                    image storage
+                  </Typography>
+                  <div className="img-container">
+                    <img
+                      onClick={() => toggleZoom("picture1")}
+                      alt="listo screenshot 1"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Listo1.png"
+                    />
+                    <img
+                      onClick={() => toggleZoom("picture2")}
+                      alt="listo screenshot 2"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Listo2.png"
+                    />
+                    <img
+                      onClick={() => toggleZoom("picture3")}
+                      alt="listo screenshot 3"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Listo3.png"
+                    />
+                  </div>
                 </Paper>
                 <Paper classes={{ root: classes.carouselPaper }}>
-                  <Typography color="inherit">LoveToKnow</Typography>
+                  <Typography color="inherit" variant="h6">
+                    LoveToKnow
+                  </Typography>
+                  <Typography color="inherit" style={{ marginTop: "1vh" }}>
+                    Re-design of popular social media site Liketoknow.it. Added
+                    functionality with the focus on the user being able to find
+                    images of people wearing specific clothing items they search
+                    for. Also includes capability of making your own account and
+                    adding affiliate links to products you post.
+                  </Typography>
+                  <div className="img-container">
+                    <img
+                      onClick={() => toggleZoom("picture4")}
+                      alt="love to know screenshot 1"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Lovetoknow1.png"
+                    />
+                    <img
+                      onClick={() => toggleZoom("picture5")}
+                      alt="love to know screenshot 2"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Lovetoknow2.png"
+                    />
+                    <img
+                      onClick={() => toggleZoom("picture6")}
+                      alt="love to know screenshot 3"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Lovetoknow3.png"
+                    />
+                  </div>
                 </Paper>
                 <Paper classes={{ root: classes.carouselPaper }}>
-                  <Typography color="inherit">CardSmart</Typography>
+                  <Typography color="inherit" variant="h6">
+                    CardSmart
+                  </Typography>
+                  <Typography color="inherit" style={{ marginTop: "1vh" }}>
+                    Flash card making app that uses Amazon Comprehend machine
+                    learning to analyze text that users input to automatically
+                    generate lists of the important information in text,
+                    simplifying the user experience.
+                  </Typography>
+                  <div className="img-container">
+                    <img
+                      onClick={() => toggleZoom("picture7")}
+                      alt="cardsmart screenshot 1"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Listo1.png"
+                    />
+                    <img
+                      onClick={() => toggleZoom("picture8")}
+                      alt="cardsmart screenshot 2"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Listo2.png"
+                    />
+                    <img
+                      onClick={() => toggleZoom("picture9")}
+                      alt="cardsmart screenshot 3"
+                      style={{ maxHeight: "40vh" }}
+                      src="/assets/Listo3.png"
+                    />
+                  </div>
                 </Paper>
               </Carousel>
             </Paper>

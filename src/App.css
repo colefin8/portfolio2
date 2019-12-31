@@ -1,9 +1,43 @@
+.Carousel .Button {
+  opacity: 0.6 !important;
+}
+
+.zoom-picture {
+  position: fixed;
+  height: 90vh;
+  top: 5vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.hidden-initial {
+  visibility: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.shown {
+  visibility: visible;
+}
+
+.img-container {
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .hover-text {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: transparent;
+  background-color: #00000060;
+  color: #f5f5f5;
 }
 
 .hover-text:hover {
@@ -17,11 +51,11 @@
 
 @keyframes fade-in {
   from {
-    background-color: transparent;
-    color: transparent;
-  }
-  to {
     background-color: #00000060;
     color: #f5f5f5;
+  }
+  to {
+    background-color: transparent;
+    color: transparent;
   }
 }
