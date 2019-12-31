@@ -7,7 +7,7 @@ import {
   ThemeProvider
 } from "@material-ui/core/styles";
 import {
-  Table,
+  Grid,
   Typography,
   Box,
   Container,
@@ -17,7 +17,6 @@ import {
 import { amber, blueGrey } from "@material-ui/core/colors";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-
 import "./App.css";
 
 const theme = createMuiTheme({
@@ -175,9 +174,13 @@ function App() {
                 }}
               >
                 <div className="hover-text">
-                  <Typography variant="body1" align="center">
+                  <Typography variant="h4" align="center">
                     {
-                      "Changing careers to web development offers me the ability to apply the same skills I learned of providing custom high quality products tailored to the client"
+                      "Changing careers to web development gives me the ability to apply the skills I learned -"
+                    }
+                    <br />
+                    {
+                      "providing custom high quality products that are tailored to the client"
                     }
                   </Typography>
                 </div>
@@ -197,7 +200,108 @@ function App() {
                 SKILLS
               </Typography>
 
-              <Table></Table>
+              <Grid
+                container
+                spacing="10"
+                direction="column"
+                style={{ height: "100%", paddingBottom: "1vw" }}
+                justify="space-around"
+                alignItems="stretch"
+              >
+                <Grid
+                  container
+                  direction="row"
+                  justify="space-around"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <img
+                      alt="amazons3"
+                      src="/assets/icons/icons8-amazon-s3.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">Amazon S3</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="css"
+                      src="/assets/icons/icons8-css3.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">CSS</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="github"
+                      src="/assets/icons/icons8-github.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">GitHub</Typography>
+                  </Grid>
+                </Grid>
+                <Grid
+                  container
+                  direction="row"
+                  justify="space-around"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <img
+                      alt="javascript"
+                      src="/assets/icons/icons8-javascript-logo.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">Javascript</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="materialui"
+                      src="/assets/icons/icons8-material-ui.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">Material UI</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="nodejs"
+                      src="/assets/icons/icons8-nodejs.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">NodeJS</Typography>
+                  </Grid>
+                </Grid>
+                <Grid
+                  container
+                  direction="row"
+                  justify="space-around"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <img
+                      alt="postgresql"
+                      src="/assets/icons/icons8-postgresql.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">PostgreSQL</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="react"
+                      src="/assets/icons/icons8-react.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">React</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="sass"
+                      src="/assets/icons/icons8-sass.svg"
+                      style={{ height: "7vw", width: "7vw" }}
+                    />
+                    <Typography align="center">Sass</Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
             </Paper>
             <Paper
               style={{
