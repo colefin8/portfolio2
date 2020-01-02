@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "server/index.js",
   "proxy": "https://localhost:4040",
-  "homepage": "https://colefinlayson.com",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.8.2",
