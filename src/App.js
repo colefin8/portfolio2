@@ -134,6 +134,7 @@ function App() {
   };
 
   return (
+    <div className='hide-on-mobile'>
     <ThemeProvider theme={theme}>
       <img
         onClick={() => toggleZoom("picture1")}
@@ -512,6 +513,7 @@ function App() {
         </Container>
       </div>
     </ThemeProvider>
+    </div>
   );
 }
 
