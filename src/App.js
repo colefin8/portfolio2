@@ -189,6 +189,19 @@ function App() {
           backgroundPosition: "center"
         }}
       >
+        <Typography
+          variant="h2"
+          align="center"
+          style={{
+            color: "#f5f5f5",
+            position: "fixed",
+            left: "3vw",
+            top: "3vh"
+          }}
+        >
+          {"Cole Finlayson"}
+        </Typography>
+
         <Container
           component="article"
           maxWidth="lg"
