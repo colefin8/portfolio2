@@ -60,7 +60,7 @@
   }
 }
 
-@media only screen and (min-device-width: 900px) {
+@media only screen and (max-device-width: 900px) {
   .hide-on-mobile {
     visibility: hidden;
   }
