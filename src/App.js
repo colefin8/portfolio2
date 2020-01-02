@@ -199,7 +199,7 @@ function App() {
             top: "3vh"
           }}
         >
-          {"Hi Elizabeth"}
+          {"Cole Finlayson"}
         </Typography>
 
         <Container
