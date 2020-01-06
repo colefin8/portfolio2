@@ -12,7 +12,8 @@ import {
   Box,
   Container,
   Paper,
-  CardMedia
+  CardMedia,
+  Link
 } from "@material-ui/core";
 import { amber, blueGrey } from "@material-ui/core/colors";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -220,6 +221,34 @@ function App() {
               }}
             >
               {"Cole Finlayson"}
+              <Typography
+                variant="h5"
+                align="left"
+                style={{ color: "#f5f5f5" }}
+              >
+                {"cole.fin8@gmail.com"}
+                <br />
+                <Link
+                  style={{ marginTop: "1vh", color: "inherit" }}
+                  href="https://github.com/colefin8/"
+                >
+                  GitHub
+                </Link>
+                <br />
+                <Link
+                  style={{ marginTop: "1vh", color: "inherit" }}
+                  href="https://www.linkedin.com/in/cole-m-finlayson/"
+                >
+                  LinkedIn
+                </Link>
+                <br />
+                <Link
+                  style={{ marginTop: "1vh", color: "inherit" }}
+                  href="/assets/Resume.pdf"
+                >
+                  Résumé
+                </Link>
+              </Typography>
             </Typography>
 
             <Container
