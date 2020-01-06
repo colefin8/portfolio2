@@ -64,4 +64,16 @@
   .hide-on-mobile {
     visibility: hidden;
   }
+  .hide-on-desktop {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-device-width: 900px) {
+  .hide-on-desktop {
+    visibility: hidden;
+  }
+  .hide-on-mobile {
+    visibility: visible;
+  }
 }
