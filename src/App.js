@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import Carousel from "react-material-ui-carousel";
 import {
@@ -12,21 +12,21 @@ import {
   Box,
   Container,
   Paper,
-  CardMedia,
   Link
 } from "@material-ui/core";
 import { amber, blueGrey } from "@material-ui/core/colors";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import "./App.css";
+import Mobile from "./Components/Mobile";
 
 const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
     secondary: amber,
-    imageSample1: { main: "#477db8" },
-    imageSample2: { main: "#D0954A" },
-    imageSample3: { main: "#BB9883" }
+    imageSample1: { main: "#4A85D0" },
+    imageSample2: { main: "#B88247" },
+    imageSample3: { main: "#83A6BB" }
   }
 });
 
@@ -100,6 +100,17 @@ function App() {
   const classes = useStyles();
 
   const [height, setHeight] = useState([3, 2, 1]);
+  const [windowWidth, setWidth] = useState(window.outerWidth);
+
+  //like a media query, but instead of hiding everything it conditionally renders mobile or desktop version
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.outerWidth);
+      console.log(windowWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, [window.outerWidth]);
 
   const handleRight = () => {
     const tl = gsap.timeline({ repeat: 0, defaults: { duration: 0.3 } });
@@ -136,70 +147,70 @@ function App() {
 
   return (
     <>
-      <div className="hide-on-mobile">
+      {windowWidth > 900 ? (
         <ThemeProvider theme={theme}>
           <img
             onClick={() => toggleZoom("picture1")}
             id="picture1"
             alt="listo 1 zoom"
             src="/assets/Listo1.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture2")}
             id="picture2"
             alt="listo 2 zoom"
             src="/assets/Listo2.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture3")}
             id="picture3"
             alt="listo 3 zoom"
             src="/assets/Listo3.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture4")}
             id="picture4"
             alt="love to know 1 zoom"
             src="/assets/Lovetoknow1.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture5")}
             id="picture5"
             alt="love to know 2 zoom"
             src="/assets/Lovetoknow2.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture6")}
             id="picture6"
             alt="love to know 3 zoom"
             src="/assets/Lovetoknow3.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture7")}
             id="picture7"
             alt="card smart 1 zoom"
             src="/assets/CardSmart1.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture8")}
             id="picture8"
             alt="card smart 2 zoom"
             src="/assets/CardSmart2.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <img
             onClick={() => toggleZoom("picture9")}
             id="picture9"
             alt="card smart 3 zoom"
             src="/assets/CardSmart3.png"
-            class="zoom-picture hidden-initial"
+            className="zoom-picture hidden-initial"
           />
           <div
             style={{
@@ -210,17 +221,16 @@ function App() {
               backgroundPosition: "center"
             }}
           >
-            <Typography
-              variant="h2"
-              align="center"
-              style={{
-                color: "#f5f5f5",
-                position: "fixed",
-                left: "3vw",
-                top: "3vh"
-              }}
-            >
-              {"Cole Finlayson"}
+            <div style={{ position: "fixed", left: "3vw", top: "3vh" }}>
+              <Typography
+                variant="h2"
+                align="center"
+                style={{
+                  color: "#f5f5f5"
+                }}
+              >
+                {"Cole Finlayson"}
+              </Typography>
               <Typography
                 variant="h5"
                 align="left"
@@ -249,7 +259,7 @@ function App() {
                   Résumé
                 </Link>
               </Typography>
-            </Typography>
+            </div>
 
             <Container
               component="article"
@@ -337,7 +347,7 @@ function App() {
 
                   <Grid
                     container
-                    spacing="10"
+                    spacing={10}
                     direction="column"
                     style={{ height: "100%", paddingBottom: "1vw" }}
                     justify="space-around"
@@ -595,8 +605,10 @@ function App() {
             </Container>
           </div>
         </ThemeProvider>
-      </div>
-      <div className="hide-on-desktop"></div>
+      ) : (
+        // finally got smart and made the mobile version a separate component
+        <Mobile />
+      )}
     </>
   );
 }
