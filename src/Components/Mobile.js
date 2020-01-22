@@ -1,11 +1,18 @@
 import React from "react";
 import { useTheme, makeStyles } from "@material-ui/styles";
-import { GridList, GridListTile, Paper, Typography } from "@material-ui/core";
+import {
+  Grid,
+  GridList,
+  GridListTile,
+  Paper,
+  Typography,
+  Link
+} from "@material-ui/core";
 
 const useStyles = makeStyles(() => {
   return {
     grid: {
-        padding: '2.5%',
+      padding: "2.5%",
       height: "100vh",
       width: "100vw",
       display: "flex",
@@ -14,10 +21,15 @@ const useStyles = makeStyles(() => {
     },
     cards: {
       height: "95vh",
-      marginTop: "2.5%",
       marginBottom: "2.5%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
       width: "95%",
-      backgroundColor: "#f5f5f540"
+      backgroundColor: "#00000050",
+      color: "#f5f5f5",
+      textShadow: "1px 1px black"
     }
   };
 });
@@ -42,17 +54,192 @@ const Mobile = props => {
         <GridList cellHeight="auto" cols={1} className={classes.grid}>
           <GridListTile style={{ margin: 0, padding: 0 }}>
             <Paper className={classes.cards}>
-              <Typography>a;sldkfja;lksdfjal</Typography>
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-evenly"
+                }}
+              >
+                <div>
+                  <Typography variant="h3" align="center">
+                    {"Cole Finlayson"}
+                    <br />
+                    <br />
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    align="center"
+                    style={{ color: "#f5f5f5" }}
+                  >
+                    {
+                      "I'm a full stack web developer from Provo, UT with a background in "
+                    }
+                    <a
+                      style={{ color: "inherit" }}
+                      href="http://wasatchcarriagehousedoors.com/"
+                    >
+                      {"finish carpentry"}
+                    </a>
+                  </Typography>
+                </div>
+                <Typography variant="h4" align="center">
+                  {/* old school <br/> */}
+                  <br />
+                  <br />
+                  {"Contact"}
+                  <br />
+                  <br />
+                  {"cole.fin8@gmail.com"}
+                  <br />
+                  <Link
+                    style={{ marginTop: "1vh", color: "inherit" }}
+                    href="https://github.com/colefin8/"
+                  >
+                    GitHub
+                  </Link>
+                  <br />
+                  <Link
+                    style={{ marginTop: "1vh", color: "inherit" }}
+                    href="https://www.linkedin.com/in/cole-m-finlayson/"
+                  >
+                    LinkedIn
+                  </Link>
+                  <br />
+                  <Link
+                    style={{ marginTop: "1vh", color: "inherit" }}
+                    href="/assets/Resume.pdf"
+                    target="_blank"
+                  >
+                    Résumé
+                  </Link>
+                </Typography>
+              </div>
             </Paper>
           </GridListTile>
           <GridListTile>
             <Paper className={classes.cards}>
-              <Typography>a;sldkfja;lksdfjal</Typography>
+              <div
+                style={{
+                  display: "flex",
+                  borderRadius: "4px",
+                  minWidth: "80%",
+                  height: "70%",
+                  backgroundImage: "url('/assets/garage_door.JPG')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              ></div>
+              <Typography variant="h6" align="center">
+                {
+                  "Changing careers to web development gives me the ability to apply the skills I learned -"
+                }
+                <br />
+                {
+                  "providing custom high quality products that are tailored to the client"
+                }
+              </Typography>
             </Paper>
           </GridListTile>
           <GridListTile>
             <Paper className={classes.cards}>
-              <Typography>a;sldkfja;lksdfjal</Typography>
+              <Typography variant="h4">
+                {"Skills"}
+                <br />
+                <br />
+              </Typography>
+
+              <Grid container direction="column" justify="space-around">
+                <Grid container direction="row" justify="space-around">
+                  <Grid item>
+                    <img
+                      alt="amazons3"
+                      src="/assets/icons/white/icons8-amazon-s3.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">Amazon S3</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="css"
+                      src="/assets/icons/white/icons8-css3.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">CSS</Typography>
+                  </Grid>
+                </Grid>
+                <Grid container direction="row" justify="space-around">
+                  <Grid item>
+                    <img
+                      alt="github"
+                      src="/assets/icons/white/icons8-github.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">GitHub</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="javascript"
+                      src="/assets/icons/white/icons8-javascript-logo.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">Javascript</Typography>
+                  </Grid>
+                </Grid>
+                <Grid container direction="row" justify="space-around">
+                  <Grid item>
+                    <img
+                      alt="materialui"
+                      src="/assets/icons/white/icons8-material-ui.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">Material UI</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="nodejs"
+                      src="/assets/icons/white/icons8-nodejs.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">NodeJS</Typography>
+                  </Grid>
+                </Grid>
+                <Grid container direction="row" justify="space-around">
+                  <Grid item>
+                    <img
+                      alt="postgresql"
+                      src="/assets/icons/white/icons8-postgresql.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">PostgreSQL</Typography>
+                  </Grid>
+                  <Grid item>
+                    <img
+                      alt="react"
+                      src="/assets/icons/white/icons8-react.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">React</Typography>
+                  </Grid>
+                </Grid>
+                <Grid
+                  container
+                  justify="center"
+                  alignContent="center"
+                  alignItems="center"
+                >
+                  <Grid item>
+                    <img
+                      alt="sass"
+                      src="/assets/icons/white/icons8-sass.svg"
+                      style={{ height: "25vw", width: "25vw" }}
+                    />
+                    <Typography align="center">Sass</Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
             </Paper>
           </GridListTile>
           <GridListTile>

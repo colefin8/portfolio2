@@ -147,7 +147,7 @@ function App() {
 
   return (
     <>
-      {windowWidth > 900 ? (
+      {windowWidth > 1174 ? (
         <ThemeProvider theme={theme}>
           <img
             onClick={() => toggleZoom("picture1")}
@@ -255,6 +255,7 @@ function App() {
                 <Link
                   style={{ marginTop: "1vh", color: "inherit" }}
                   href="/assets/Resume.pdf"
+                  target="_blank"
                 >
                   Résumé
                 </Link>
@@ -299,8 +300,14 @@ function App() {
                     }}
                   >
                     {
-                      "I'm a full stack web developer from Provo, UT with a background in finish carpentry"
+                      "I'm a full stack web developer from Provo, UT with a background in "
                     }
+                    <a
+                      style={{ color: "inherit" }}
+                      href="http://wasatchcarriagehousedoors.com/"
+                    >
+                      {"finish carpentry"}
+                    </a>
                   </Typography>
                   <div
                     style={{
