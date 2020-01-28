@@ -8,7 +8,6 @@ import {
   Typography,
   Link
 } from "@material-ui/core";
-
 const useStyles = makeStyles(() => {
   return {
     grid: {
@@ -244,7 +243,69 @@ const Mobile = props => {
           </GridListTile>
           <GridListTile>
             <Paper className={classes.cards}>
-              <Typography>a;sldkfja;lksdfjal</Typography>
+              <Typography variant="h4">
+                {"Listo"}
+                <br />
+                <br />
+              </Typography>
+              <Typography style={{ width: "80%" }} variant="h6">
+                {
+                  "Simple budgeting and list app designed to be user-friendly and user-proof, designed for mobile and uses Amazon S3 for image storage"
+                }
+                <br />
+                <br />
+
+                <a
+                  href="https://github.com/colefin8/Listo"
+                  style={{ color: "inherit" }}
+                >
+                  {"Link to Github"}
+                </a>
+              </Typography>
+            </Paper>
+          </GridListTile>
+          <GridListTile>
+            <Paper className={classes.cards}>
+              <Typography variant="h4">
+                {"Love to Know It"}
+                <br />
+                <br />
+              </Typography>
+              <Typography style={{ width: "80%" }} variant="h6">
+                {
+                  "Re-design of popular social media site Liketoknow.it.  Added functionality with the focus on the user being able to find images of people wearing specific clothing items they search for. Also includes capability of making your own account and adding affiliate links to products you post."
+                }
+                <br />
+                <br />
+                <a
+                  href="https://github.com/WLH11clothesapp/ShopSearch"
+                  style={{ color: "inherit" }}
+                >
+                  {"Link to Github"}
+                </a>
+              </Typography>
+            </Paper>
+          </GridListTile>
+          <GridListTile>
+            <Paper className={classes.cards}>
+              <Typography variant="h4">
+                {"Card Smart"}
+                <br />
+                <br />
+              </Typography>
+              <Typography style={{ width: "80%" }} variant="h6">
+                {
+                  "Flash card making app that uses Amazon Comprehend machine learning to analyze text that users input to automatically generate lists of the important information in text, simplifying the user experience."
+                }
+                <br />
+                <br />
+                <a
+                  href="https://github.com/Jeordins-Bois/CardSmart"
+                  style={{ color: "inherit" }}
+                >
+                  {"Link to Github"}
+                </a>
+              </Typography>
             </Paper>
           </GridListTile>
         </GridList>

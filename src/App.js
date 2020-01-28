@@ -110,7 +110,7 @@ function App() {
     };
 
     window.addEventListener("resize", handleResize);
-  }, [window.outerWidth]);
+  }, []);
 
   const handleRight = () => {
     const tl = gsap.timeline({ repeat: 0, defaults: { duration: 0.3 } });
