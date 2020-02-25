@@ -223,7 +223,7 @@ function App() {
           >
             <div style={{ position: "fixed", left: "3vw", top: "3vh" }}>
               <Typography
-                variant="h2"
+                variant="h3"
                 align="center"
                 style={{
                   color: "#f5f5f5"
