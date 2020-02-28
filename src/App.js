@@ -24,9 +24,9 @@ const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
     secondary: amber,
-    imageSample1: { main: "#98B4CD" },
-    imageSample2: { main: "#98B4CD" },
-    imageSample3: { main: "#98B4CD" }
+    imageSample1: { main: "#FBF6EA" },
+    imageSample2: { main: "#FBF6EA" },
+    imageSample3: { main: "#FBF6EA" }
   }
 });
 
@@ -216,7 +216,7 @@ function App() {
             style={{
               overflow: "hidden",
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1540574722410-54cff7a339d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80')",
+                "url('https://images.unsplash.com/photo-1569974558049-b49233bd04c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}
@@ -226,7 +226,8 @@ function App() {
                 variant="h3"
                 align="center"
                 style={{
-                  color: "#f5f5f5"
+                  color: "#f5f5f5",
+                  textShadow: "1px 1px #000000"
                 }}
               >
                 {"Cole Finlayson"}
@@ -234,7 +235,7 @@ function App() {
               <Typography
                 variant="h5"
                 align="left"
-                style={{ color: "#f5f5f5" }}
+                style={{ color: "#f5f5f5", textShadow: "1px 1px #000000" }}
               >
                 {"cole.fin8@gmail.com"}
                 <br />
