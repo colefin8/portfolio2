@@ -133,7 +133,7 @@ const Mobile = props => {
               ></div>
               <Typography variant="h6" align="center">
                 {
-                  "Changing careers to web development gives me the ability to apply the skills I learned -"
+                  "Changing careers to web development still allows me to apply the skills I learned -"
                 }
                 <br />
                 {

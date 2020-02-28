@@ -24,9 +24,9 @@ const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
     secondary: amber,
-    imageSample1: { main: "#4A85D0" },
-    imageSample2: { main: "#B88247" },
-    imageSample3: { main: "#83A6BB" }
+    imageSample1: { main: "#CEA28B" },
+    imageSample2: { main: "#CEA28B" },
+    imageSample3: { main: "#CEA28B" }
   }
 });
 
@@ -61,7 +61,7 @@ const useStyles = makeStyles(() => {
     paperRoot: {
       position: "absolute",
       height: "80vh",
-      width: "50vw",
+      width: "46vw",
       padding: "2vh 2vw",
       boxSizing: "border-box"
 
@@ -72,19 +72,19 @@ const useStyles = makeStyles(() => {
     },
     paper1: {
       marginTop: "-39.5vh",
-      marginLeft: "-24.5vw",
+      marginLeft: "-22.5vw",
       color: "transparent",
       zIndex: 1
     },
     paper2: {
       marginTop: "-39.75vh",
-      marginLeft: "-24.75vw",
+      marginLeft: "-22.75vw",
       color: "transparent",
       zIndex: 2
     },
     paper3: {
       marginTop: "-40vh",
-      marginLeft: "-25vw",
+      marginLeft: "-23vw",
       color: "#060A06",
       zIndex: 3
     },
@@ -221,7 +221,7 @@ function App() {
               backgroundPosition: "center"
             }}
           >
-            <div style={{ position: "fixed", left: "3vw", top: "3vh" }}>
+            <div style={{ position: "fixed", left: "2vw", top: "2vh" }}>
               <Typography
                 variant="h3"
                 align="center"
@@ -323,7 +323,7 @@ function App() {
                     <div className="hover-text">
                       <Typography variant="h4" align="center">
                         {
-                          "Changing careers to web development gives me the ability to apply the skills I learned -"
+                          "Changing careers to web development still allows me to apply the skills I learned -"
                         }
                         <br />
                         {
