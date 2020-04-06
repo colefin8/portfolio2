@@ -4,7 +4,7 @@ import Carousel from "react-material-ui-carousel";
 import {
   makeStyles,
   createMuiTheme,
-  ThemeProvider
+  ThemeProvider,
 } from "@material-ui/core/styles";
 import {
   Grid,
@@ -12,7 +12,7 @@ import {
   Box,
   Container,
   Paper,
-  Link
+  Link,
 } from "@material-ui/core";
 import { amber, blueGrey } from "@material-ui/core/colors";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -24,13 +24,13 @@ const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
     secondary: amber,
-    imageSample1: { main: "#FBF6EA" },
-    imageSample2: { main: "#FBF6EA" },
-    imageSample3: { main: "#FBF6EA" }
-  }
+    imageSample1: { main: "#2d2329" },
+    imageSample2: { main: "#2d2329" },
+    imageSample3: { main: "#2d2329" },
+  },
 });
 
-const toggleZoom = pictureId => {
+const toggleZoom = (pictureId) => {
   const element = document.getElementById(pictureId);
   if (element.classList.contains("hidden-initial")) {
     element.classList.remove("hidden-initial");
@@ -56,43 +56,43 @@ const useStyles = makeStyles(() => {
       minHeight: "100vh",
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center"
+      alignItems: "center",
     },
     paperRoot: {
       position: "absolute",
       height: "80vh",
       width: "46vw",
       padding: "2vh 2vw",
-      boxSizing: "border-box"
+      boxSizing: "border-box",
 
       // backgroundColor: "rgba(245,245,245, .01)"
     },
     cardHeader: {
-      margin: "5px 0px 5vh 5px"
+      margin: "5px 0px 5vh 5px",
     },
     paper1: {
       marginTop: "-39.5vh",
       marginLeft: "-22.5vw",
       color: "transparent",
-      zIndex: 1
+      zIndex: 1,
     },
     paper2: {
       marginTop: "-39.75vh",
       marginLeft: "-22.75vw",
       color: "transparent",
-      zIndex: 2
+      zIndex: 2,
     },
     paper3: {
       marginTop: "-40vh",
       marginLeft: "-23vw",
       color: "#060A06",
-      zIndex: 3
+      zIndex: 3,
     },
     carouselPaper: {
       backgroundColor: "#f5f5f566",
       height: "60vh",
-      padding: "7px"
-    }
+      padding: "7px",
+    },
   };
 });
 
@@ -116,7 +116,7 @@ function App() {
     const tl = gsap.timeline({ repeat: 0, defaults: { duration: 0.3 } });
     tl.to(".MuiPaper-elevation3", { x: 400, y: -400, rotation: 10 });
     tl.call(() => {
-      const newHeights = height.map(e => {
+      const newHeights = height.map((e) => {
         if (e === 3) {
           return 1;
         } else {
@@ -133,7 +133,7 @@ function App() {
     const tl = gsap.timeline({ repeat: 0, defaults: { duration: 0.3 } });
     tl.to(".MuiPaper-elevation1", { x: 400, y: -400, rotation: 10 });
     tl.call(() => {
-      const newHeights = height.map(e => {
+      const newHeights = height.map((e) => {
         if (e === 1) {
           return 3;
         } else {
@@ -218,7 +218,7 @@ function App() {
               backgroundImage:
                 "url('https://images.unsplash.com/photo-1569974558049-b49233bd04c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80')",
               backgroundSize: "cover",
-              backgroundPosition: "center"
+              backgroundPosition: "center",
             }}
           >
             <div style={{ position: "fixed", left: "2vw", top: "2vh" }}>
@@ -227,7 +227,7 @@ function App() {
                 align="center"
                 style={{
                   color: "#f5f5f5",
-                  textShadow: "1px 1px #000000"
+                  textShadow: "1px 1px #000000",
                 }}
               >
                 {"Cole Finlayson"}
@@ -275,14 +275,14 @@ function App() {
               <Box>
                 <Paper
                   style={{
-                    backgroundColor: `${theme.palette.imageSample1.main}`
+                    backgroundColor: `${theme.palette.imageSample1.main}`,
                   }}
                   elevation={height[0]}
                   classes={{
                     root: classes.paperRoot,
                     elevation1: classes.paper1,
                     elevation2: classes.paper2,
-                    elevation3: classes.paper3
+                    elevation3: classes.paper3,
                   }}
                 >
                   <Typography
@@ -297,7 +297,7 @@ function App() {
                     variant="h6"
                     align="center"
                     style={{
-                      marginBottom: "2vh"
+                      marginBottom: "2vh",
                     }}
                   >
                     {
@@ -318,7 +318,7 @@ function App() {
                       height: "70%",
                       backgroundImage: "url('/assets/garage_door.JPG')",
                       backgroundSize: "cover",
-                      backgroundPosition: "center"
+                      backgroundPosition: "center",
                     }}
                   >
                     <div className="hover-text">
@@ -336,14 +336,14 @@ function App() {
                 </Paper>
                 <Paper
                   style={{
-                    backgroundColor: `${theme.palette.imageSample2.main}`
+                    backgroundColor: `${theme.palette.imageSample2.main}`,
                   }}
                   elevation={height[1]}
                   classes={{
                     root: classes.paperRoot,
                     elevation1: classes.paper1,
                     elevation2: classes.paper2,
-                    elevation3: classes.paper3
+                    elevation3: classes.paper3,
                   }}
                 >
                   <Typography
@@ -370,26 +370,34 @@ function App() {
                       <Grid item>
                         <img
                           alt="amazons3"
-                          src="/assets/icons/icons8-amazon-s3.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-amazon-s3.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">Amazon S3</Typography>
                       </Grid>
                       <Grid item>
                         <img
                           alt="css"
-                          src="/assets/icons/icons8-css3.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-css3.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">CSS</Typography>
                       </Grid>
                       <Grid item>
                         <img
-                          alt="github"
-                          src="/assets/icons/icons8-github.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          alt="express.js"
+                          src="/assets/icons/white/express-js-seeklogo.com.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
-                        <Typography align="center">GitHub</Typography>
+                        <Typography align="center">Express.js</Typography>
+                      </Grid>
+                      <Grid item>
+                        <img
+                          alt="gatsby"
+                          src="/assets/icons/white/gatsby.svg"
+                          style={{ height: "5vw", width: "5vw" }}
+                        />
+                        <Typography align="center">Gatsby</Typography>
                       </Grid>
                     </Grid>
                     <Grid
@@ -400,25 +408,33 @@ function App() {
                     >
                       <Grid item>
                         <img
+                          alt="github"
+                          src="/assets/icons/white/icons8-github.svg"
+                          style={{ height: "5vw", width: "5vw" }}
+                        />
+                        <Typography align="center">GitHub</Typography>
+                      </Grid>
+                      <Grid item>
+                        <img
                           alt="javascript"
-                          src="/assets/icons/icons8-javascript-logo.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-javascript-logo.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">Javascript</Typography>
                       </Grid>
                       <Grid item>
                         <img
                           alt="materialui"
-                          src="/assets/icons/icons8-material-ui.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-material-ui.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">Material UI</Typography>
                       </Grid>
                       <Grid item>
                         <img
                           alt="nodejs"
-                          src="/assets/icons/icons8-nodejs.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-nodejs.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">NodeJS</Typography>
                       </Grid>
@@ -432,24 +448,32 @@ function App() {
                       <Grid item>
                         <img
                           alt="postgresql"
-                          src="/assets/icons/icons8-postgresql.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-postgresql.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">PostgreSQL</Typography>
                       </Grid>
                       <Grid item>
                         <img
                           alt="react"
-                          src="/assets/icons/icons8-react.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-react.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">React</Typography>
                       </Grid>
                       <Grid item>
                         <img
+                          alt="redux"
+                          src="/assets/icons/white/icons8-redux.svg"
+                          style={{ height: "5vw", width: "5vw" }}
+                        />
+                        <Typography align="center">Redux</Typography>
+                      </Grid>
+                      <Grid item>
+                        <img
                           alt="sass"
-                          src="/assets/icons/icons8-sass.svg"
-                          style={{ height: "7vw", width: "7vw" }}
+                          src="/assets/icons/white/icons8-sass.svg"
+                          style={{ height: "5vw", width: "5vw" }}
                         />
                         <Typography align="center">Sass</Typography>
                       </Grid>
@@ -459,14 +483,14 @@ function App() {
                 <Paper
                   style={{
                     backgroundColor: `${theme.palette.imageSample3.main}`,
-                    overflow: "hidden"
+                    overflow: "hidden",
                   }}
                   elevation={height[2]}
                   classes={{
                     root: classes.paperRoot,
                     elevation1: classes.paper1,
                     elevation2: classes.paper2,
-                    elevation3: classes.paper3
+                    elevation3: classes.paper3,
                   }}
                 >
                   <div
