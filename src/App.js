@@ -24,9 +24,9 @@ const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
     secondary: amber,
-    imageSample1: { main: "#2d2329" },
-    imageSample2: { main: "#2d2329" },
-    imageSample3: { main: "#2d2329" },
+    imageSample1: { main: "#B1A19D" },
+    imageSample2: { main: "#B1A19D" },
+    imageSample3: { main: "#B1A19D" },
   },
 });
 
